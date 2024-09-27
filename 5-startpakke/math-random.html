@@ -4,17 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="../styles.css">
   </head>
 
   <body>
     <input
       type="button"
       id="random-number-btn"
+      class="nummer-knapp"
       value="Trykk for å få et hemmelig tall!"
     />
 
     <ul id="random-number-txt"></ul>
 
-    <script></script>
+    <script>
+
+      const randomNumberBtn = document.getElementById("random-number-btn");
+      const randomNumberTxt = document.getElementById("random-number-txt");
+
+      randomNumberBtn.onclick = generateRandomNumber;
+
+      function generateRandomNumber() {
+        const randomNumber = Math.floor(Math.random() * 5 + 1);
+        randomNumberTxt.innerHTML += `<li>${randomNumber}</li>`;
+      }
+
+
+
+    </script>
   </body>
 </html>

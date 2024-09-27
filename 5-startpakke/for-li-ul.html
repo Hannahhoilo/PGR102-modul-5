@@ -4,10 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="../styles.css">
   </head>
 
   <body>
     <p>Hvor mange Monster vil du ha?</p>
-    <script></script>
+    <input type="text" 
+    placeholder="Skriv inn antall Monster" 
+    id="monster-input">
+
+    <input type="button" id="monster-btn" value="Trykk her!">
+
+    <ul id="monster-list"></ul>
+    
+
+
+    <script>
+      const monsterInput = document.getElementById("monster-input");
+      const monsterBtn = document.getElementById("monster-btn");
+      const monsterList = document.getElementById("monster-list");
+
+      monsterBtn.onclick = showMonster;
+
+      function showMonster() {
+        console.log("hei fra funskjon");
+        const inputValue = monsterInput.value;
+        console.log(inputValue);
+
+        for(let i = 0; i < inputValue; i++){
+          monsterList.innerHTML += `<img src="/5-startpakke/assets/monster.jpg">`;
+        }
+      }
+
+
+
+    </script>
   </body>
 </html>

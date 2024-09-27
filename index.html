@@ -1,17 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 	<h1>Hello🌞</h1>
-	
+
+	<ul id="heisan-number"></ul>
+
+
+	<input type="button" value="Cute puppy! 🐾" id="ugly-dog-btn">
+	<ul id="dog-list"></ul>
+
+
+	<button id="countdown-btn">Start nedtelling!</button>
+	<ul id="final-countdown-ul"></ul>
+
+
+	<input type="text" id="money-input" placeholder="Hvor mange tusen kroner vil du ha?">
+
+	<input type="button" id="money-btn" value="Trykk for gratis penger!"></input>
+	<div id="money-container"></div>
+
+	<input type="button" id="random-counter-btn" value="Trykk for random nummer!">
+	<ul id="random-counter-list"></ul>
 
 
 	<script>
+		const randomCounterBtn = document.getElementById("random-counter-btn");
+		const randomCounterList = document.getElementById("random-counter-list");
+
+		randomCounterBtn.onclick = generateRandomList;
+
+		function generateRandomList() {
+			let randomListHTML = '';
+			for (let i = 0; i < 100; i++) {
+				let randomNumber = Math.floor(Math.random() * 100 + 1);
+				randomListHTML += `<li>${randomNumber}</li>`
+			}
+			randomCounterList.innerHTML = randomListHTML;
+		}
+
+
+		// oppgave 6 
+
+		//Oppgave 5 
+		/*
+
+		const userPassword1 = prompt("Skriv ditt passord"); // Be om passord første gang
+
+		let userPassword2 = prompt("Skriv det en gang til!"); // Be om passord andre gang
+
+		while (userPassword2 !== userPassword1) {
+			alert("FEIL! Prøv igjen.");
+			userPassword2 = prompt("Skriv det en gang til!"); // Be brukeren skrive på nytt
+		}
+
+		alert("RIKTIG!"); // Hvis løkken avsluttes, betyr det at passordene stemmer
+
+*/
+
+
+		//oppgave 4 
+		moneyInput = document.getElementById("money-input");
+		moneyBtn = document.getElementById("money-btn");
+		moneyContainer = document.getElementById("money-container");
+
+		moneyBtn.onclick = showMoney;
+
+		function showMoney() {
+			let moneyHTML = '';
+			const inputValue = moneyInput.value;
+			for (let i = 0; i < inputValue; i++) {
+				moneyHTML += `<img src="5-startpakke/assets/cash.jpg">`
+			}
+			moneyContainer.innerHTML = moneyHTML;
+		}
+
+
+
+
+
+		//oppgave 3 
+		const finalCountdownUl = document.getElementById("final-countdown-ul");
+		const countdownBtn = document.getElementById("countdown-btn");
+
+		function countdownFunction() {
+			let countdownHTML = ''; // Start med en tom string
+
+			for (let i = 100; i >= 0; i--) {
+				countdownHTML += `<li>Nedtelling ${i}</li>`; // Append hver nedtelling til HTML-strengen
+			}
+
+			finalCountdownUl.innerHTML = countdownHTML; // Sett innerHTML etter løkken
+		}
+
+		// nedtelling når knappen klikkes!!
+		countdownBtn.onclick = countdownFunction;
+
+
+
+		//oppgave 2 
+		const uglyDogBtn = document.getElementById("ugly-dog-btn");
+		const dogList = document.getElementById("dog-list");
+
+		uglyDogBtn.onclick = showDog;
+		function showDog() {
+			let dogsHTML = ''; // Variabel for å samle opp HTML-strengen
+
+			for (let i = 0; i < 10; i++) {
+				dogsHTML += '<li><img src="5-startpakke/assets/uglyassdogg.jpg" alt="Bilde av en hund"></li>'; // Bygg opp HTML-strengen
+			}
+
+			dogList.innerHTML = dogsHTML; // Sett `innerHTML` til hele strengen én gang
+		}
+
+
+
+
+
+
+
+		//oppgave 1
+
+		const heisanNumber = document.getElementById("heisan-number");
+
+		for (let i = 0; i <= 3; i++) {
+			heisanNumber.innerHTML += `<li>Heisan ${i}</li>`;
+		}
 		/*
 		26.09.24
 		7.10 kl 10.00 - 8.11 kl 10.00 arbeidskrav
@@ -91,6 +212,13 @@
 
 		----------------------
 		math.random math.floor 
+		math.random() er en js metode som skriver ut et tilfeldig desimaltall
+
+
+		vi ønsker ofte å kompinere math.random() med math.floor()
+		for å runde tallet oppover 
+
+		const randomnumberbetween0and99 = math.floor(math.random() * 100);
 
 
 		*/
@@ -100,4 +228,5 @@
 
 	</script>
 </body>
+
 </html>

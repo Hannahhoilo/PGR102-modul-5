@@ -7,8 +7,29 @@
 
 body {
 	background-color: #3a4359;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 4rem;
 }
 
 h1 {
 	color:#ffae00;
+}
+
+p {
+	color:#ffae00;
+}
+
+li {
+	font-size: larger;
+	font-weight: bold;
+	color: aquamarine;
+}
+
+.nummer-knapp {
+	width: 4rem;
+	height: 3rem;
+	color: aquamarine;
+	background-color: #ffae00;
 }

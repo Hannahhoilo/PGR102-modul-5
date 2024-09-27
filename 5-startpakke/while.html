@@ -7,6 +7,23 @@
   </head>
 
   <body>
-    <script></script>
+
+
+    <script>
+
+      const secretNumber = 16;
+      let correctAnswer = false;
+
+      while (correctAnswer == false) {
+        const userNumber = prompt("Gjett det hemmelige tallet!");
+        if(userNumber == secretNumber){
+          correctAnswer = true;
+          console.log("riktig!");
+        }
+      }
+
+
+
+    </script>
   </body>
 </html>
